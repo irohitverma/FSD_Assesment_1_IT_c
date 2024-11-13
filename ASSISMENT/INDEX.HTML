@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Product Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        input {
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            const price = 15; // price per unit
+            const quantity = document.getElementById('quantity').value;
+            const total = quantity * price;
+            document.getElementById('totalCost').textContent = 'Total Cost: Rs. ' + (total ? total.toFixed(2) : '0.00');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="./images.jpg" alt="Camera">
+        <h1>Sample Product</h1>
+        <h4>Rs. 15</h4>
+        <h6>This is a short description of the product</h6>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" oninput="calculateTotal()">
+
+        <p id="totalCost">Total Cost: Rs. 0.00</p>
+        <button type="button" onclick="alert('Thank you for your purchase!')">Buy Now</button>
+    </div>
+</body>
+</html>
